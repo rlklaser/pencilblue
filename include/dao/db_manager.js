@@ -80,6 +80,17 @@ module.exports = function DBManagerModule(pb) {
 				 var ml = env.mongolab;
 				 dbURL = ml[0].credentials.uri;
 			  }
+			  else {
+			  	
+			  	for (var svcName in env) {
+					if (svcName.match(/^mongo.*/)) {
+				      mongoUrl = env[svcName][0].credentials.uri;
+				      mongoUrl = mongoUrl || vcapServices[svcName][0].credentials.url;
+				      break;
+				    }
+				}
+			  	
+			  }
 			}
 
             var options = {
