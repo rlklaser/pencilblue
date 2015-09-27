@@ -72,6 +72,16 @@ module.exports = function DBManagerModule(pb) {
 
             //build the connection string for the mongo cluster
             var dbURL   = DBManager.buildConnectionStr(pb.config);
+
+
+				if (process.env.VCAP_SERVICES) {
+				  var env = JSON.parse(process.env.VCAP_SERVICES);
+				  if (env.mongolab) { // for mongolabs
+					 var ml = env.mongolab;
+					 dbURL = ml[0].credentials.uri;
+				  }
+				}
+
             var options = {
                 w: pb.config.db.writeConcern
             };
