@@ -85,7 +85,7 @@ module.exports = function DBManagerModule(pb) {
 			  	for (var svcName in env) {
 					if (svcName.match(/^mongo.*/)) {
 				      mongoUrl = env[svcName][0].credentials.uri;
-				      mongoUrl = mongoUrl || vcapServices[svcName][0].credentials.url;
+				      mongoUrl = mongoUrl || env[svcName][0].credentials.url;
 				      break;
 				    }
 				}
