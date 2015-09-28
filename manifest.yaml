@@ -1,0 +1,6 @@
+applications:
+  name: pencilblue
+  memory: 512M
+  command: node pencilblue.js
+  services:
+     mongodbnode
