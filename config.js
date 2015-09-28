@@ -14,7 +14,7 @@ module.exports = {
     "siteRoot": "http://pencilblue.mybluemix.net",
     "sitePort": 80,
     "logging": {
-        "level": "debug"
+        "level": "info"
     },
     "db": {
         "type":"mongo",
