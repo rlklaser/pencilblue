@@ -11,8 +11,8 @@
 
 module.exports = {
     "siteName": "My PencilBlue Site",
-    "siteRoot": "http://pencilblue.mybluemix.net",
-    "sitePort": 80,
+    "siteRoot": "https://127.0.0.1",
+    "sitePort": 443,
     "logging": {
         "level": "info"
     },

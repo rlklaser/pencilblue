@@ -213,8 +213,10 @@ function PencilBlue(config){
                 cb(err, false);
             };
             pb.server.once('error', onServerStartError);
-            pb.server.listen(pb.config.sitePort, pb.config.siteIP, function() {
-                pb.log.info('PencilBlue: %s running at site root [%s] on port [%d]', pb.config.siteName, pb.config.siteRoot, pb.config.sitePort);
+            //var port = process.env.VCAP_APP_PORT || pb.config.sitePort;
+            var port = process.env.VCAP_APP_PORT || 8080;
+            pb.server.listen(port, function() {
+                pb.log.info('PencilBlue: %s running at site root [%s] on port [%d]', pb.config.siteName, pb.config.siteRoot, port);
                 pb.server.removeListener('error', onServerStartError);
                 cb(null, true);
             });
