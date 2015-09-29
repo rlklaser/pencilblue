@@ -11,10 +11,10 @@
 
 module.exports = {
     "siteName": "My PencilBlue Site",
-    "siteRoot": "https://127.0.0.1",
-    "sitePort": 443,
+    "siteRoot": "http://127.0.0.1",
+    "sitePort": 80,
     "logging": {
-        "level": "info"
+        "level": "debug"
     },
     "db": {
         "type":"mongo",
